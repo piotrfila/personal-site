@@ -1,0 +1,9 @@
+---
+.title = "Driving a VFD Display with an 8051 MCU",
+.date = @date("2025-07-28T12:00:00"),
+.author = "Piotr Fila",
+.layout = "post.shtml",
+.draft = false,
+--- 
+
+[Coming soon!](<$image.asset("preview.jpg").alt("A sneak peak into what is coming.")>)

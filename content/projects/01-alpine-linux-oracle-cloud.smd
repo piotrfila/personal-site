@@ -1,0 +1,53 @@
+---
+.title = "Hosting with Alpine Linux on Oracle Cloud",
+.date = @date("2025-07-27T12:00:00"),
+.author = "Piotr Fila",
+.layout = "post.shtml",
+.draft = false,
+--- 
+
+## Motivation
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I recently decided I wanted to host a simple static website with write-ups
+about my projects. The main motivation for this is to help me actually finish
+what I start - Bring a project to completion is much less appealing than
+starting a new one, and so the pile of old ideas, git repositories, 3D models
+and parts only grows.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Ideally, the website should cost as little as possible. There are many options
+for free static site hosting, the seemingly most common one being GitHub pages.
+However, I like the added flexibility of a dedicated VPS. It could later be
+expanded to allow comments under the posts (a functionality I would like to add
+at some point) and the added cost is actually *zero*.
+
+## Oracle Cloude Free Tier
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Oracle offers free VPSs with up to 4 vCPUs and 24 GiB of RAM. This is more than
+adequate for a simple website like this. However, Oracle's management interface
+leaves quite a bit to be desired. Most notably, using custom Linux images is
+locked behind a paid tier.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+That said, there is still hope. The boot partitions on the system images
+offered by Oracle are large enough to be overwritten with a minimalist Linux
+ISO. On the next boot, the system runs entirely from RAM and the boot disk
+is available for traditional reformatting. This way it should be possible to
+install any distribution on the system, although if the desired ISO is larger
+than the boot partition, an intermediate step may be required.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I opted not to bother with that and just use Alpine Linux, the minimalist
+distro in question. One of the main selling points of Alpine is increased
+security, which is a nice bonus for a public-facing server. It is also
+possible to avoid using sshd by connecting to the server using OCI's
+Cloud Shell service.
+
+## Sources
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+More details about this process, including all used commands can be found in
+[this article by Alex Tsang](https://alextsang.net/articles/20191006-063049/index.html).
+I highly recommend reading it if you want to go through this procedure yourself.
+If you want to set up automatic updates too, check out [this post by Isaac Bythewood
+](https://blog.bythewood.me/posts/minimal-automated-updates-for-alpine-linux/)
