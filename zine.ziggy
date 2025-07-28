@@ -1,8 +1,11 @@
 Site {
     .title = "Piotr Fila",
-    .host_url = "https://piotrfila.me",
+    .host_url = "https://www.piotrfila.xyz",
     .content_dir_path = "content",
     .layouts_dir_path = "layouts",
     .assets_dir_path = "assets",
-    .static_assets = [],
+    .static_assets = [
+        "favicon.ico",
+        "robots.txt",
+    ],
 }
